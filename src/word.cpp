@@ -6,11 +6,17 @@
 #include <algorithm>
 
 std::istream & Word::read(std::istream& in){
-	std::string buffer{};
+	std::string buffer{""};
 	char input {};
 	while(in){
-		in.get(input);
-		buffer += input;
+		if(in.get(input)){
+			if(::isalpha(input)){
+				buffer += input;
+			}else{
+				myWord = buffer;
+				break;
+			}
+		}
 	}
 	myWord = buffer;
 	return in;
@@ -21,7 +27,7 @@ void Word::isValid(std::string const & in){
 		throw std::invalid_argument("Empty String!!!");
 	}
 	if(!std::all_of(begin(in), end(in), ::isalpha)){
-		throw std::invalid_argument("");
+		throw std::invalid_argument("Minimum one non valid character!");
 	}
 }
 

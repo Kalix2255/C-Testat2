@@ -81,10 +81,10 @@ void test_same_word_is_greater_equal() {
 }
 
 void test_input_operator_single_word() {
-	std::istringstream input{"Elixir"};
+	std::istringstream input{ "Elixir" };
 	Word w{};
 	input >> w;
-	ASSERT_EQUAL(Word{"Elixir"}, w);
+	ASSERT_EQUAL(Word{ "Elixir" }, w);
 }
 
 void test_input_operator_single_word_stream_good() {
