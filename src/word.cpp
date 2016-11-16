@@ -12,13 +12,19 @@ std::istream & Word::read(std::istream& in){
 		if(in.get(input)){
 			if(::isalpha(input)){
 				buffer += input;
-			}else{
+				myWord = buffer;
+				if(!::isalpha(in.peek())) {
+					break;
+				}
+			}
+			if(::isblank(input) && !buffer.empty()){
+
 				myWord = buffer;
 				break;
 			}
 		}
 	}
-	myWord = buffer;
+
 	return in;
 };
 

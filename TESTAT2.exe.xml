@@ -20,39 +20,15 @@
 		<testcase classname="AllTests" name="test_input_operator_single_word"/>
 		<testcase classname="AllTests" name="test_input_operator_called_once_first_word"/>
 		<testcase classname="AllTests" name="test_input_operator_called_once_stream_good"/>
-		<testcase classname="AllTests" name="test_input_operator_single_word_stream_good">
-			<failure message="..\src\Test.cpp:93 test_input_operator_single_word_stream_good: input &gt;&gt; w">
-test_input_operator_single_word_stream_good: input &gt;&gt; w
-			</failure>
-		</testcase>
+		<testcase classname="AllTests" name="test_input_operator_single_word_stream_good"/>
 		<testcase classname="AllTests" name="test_input_operator_on_empty_stream_fail"/>
-		<testcase classname="AllTests" name="test_input_operator_on_empty_stream_word_unchanged">
-			<failure message="..\src\Test.cpp:127 test_input_operator_on_empty_stream_word_unchanged: Word{&quot;Eiffel&quot;} == w expected:	Eiffel	but was:		">
-test_input_operator_on_empty_stream_word_unchanged: Word{&quot;Eiffel&quot;} == w expected:	Eiffel	but was:		
-			</failure>
-		</testcase>
+		<testcase classname="AllTests" name="test_input_operator_on_empty_stream_word_unchanged"/>
 		<testcase classname="AllTests" name="test_input_operator_stops_on_slash"/>
-		<testcase classname="AllTests" name="test_input_operator_stops_at_end_of_word">
-			<failure message="..\src\Test.cpp:142 test_input_operator_stops_at_end_of_word: 6 == i expected:	6	but was:	0	">
-test_input_operator_stops_at_end_of_word: 6 == i expected:	6	but was:	0	
-			</failure>
-		</testcase>
-		<testcase classname="AllTests" name="test_input_operator_skips_leading_non_alpha">
-			<failure message="..\src\Test.cpp:149 test_input_operator_skips_leading_non_alpha: Word{&quot;switchBF&quot;} == w expected:	switchBF	but was:		">
-test_input_operator_skips_leading_non_alpha: Word{&quot;switchBF&quot;} == w expected:	switchBF	but was:		
-			</failure>
-		</testcase>
+		<testcase classname="AllTests" name="test_input_operator_stops_at_end_of_word"/>
+		<testcase classname="AllTests" name="test_input_operator_skips_leading_non_alpha"/>
 		<testcase classname="AllTests" name="test_same_word_with_different_cases_are_not_smaller"/>
 		<testcase classname="AllTests" name="test_input_operator_overwrites_word"/>
-		<testcase classname="AllTests" name="test_input_operator_on_stream_without_word">
-			<failure message="..\src\Test.cpp:120 test_input_operator_on_stream_without_word: input.fail()">
-test_input_operator_on_stream_without_word: input.fail()
-			</failure>
-		</testcase>
-		<testcase classname="AllTests" name="test_exercise_example">
-			<failure message="..\src\Test.cpp:165 test_exercise_example: Word{&quot;tely&quot;} == w expected:	tely	but was:		">
-test_exercise_example: Word{&quot;tely&quot;} == w expected:	tely	but was:		
-			</failure>
-		</testcase>
+		<testcase classname="AllTests" name="test_input_operator_on_stream_without_word"/>
+		<testcase classname="AllTests" name="test_exercise_example"/>
 	</testsuite>
 </testsuites>
