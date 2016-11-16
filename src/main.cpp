@@ -1,23 +1,23 @@
 #include "Word.h"
+#include "kwic.h"
 #include <iostream>
-/*
+#include <vector>
+#include <algorithm>
+#include <iterator>
 int main(){
-	Word test {};
-	Word test2 {};
 
-	test.read(std::cin);
-	test2.read(std::cin);
-	std::cout << "Comparing '" << test << "' and '" << test2 << "'" <<std::endl;
+	kwic(std::cin, std::cout);
 
-	std::cout << (test < test2);
-	std::cout << (test > test2);
-	std::cout << (test == test2);
-	std::cout << (test != test2);
-	std::cout << (test <= test2);
-	std::cout << (test >= test2);
 
+
+
+	for(std::vector<Word>::iterator it=a.begin(); it!=a.end(); ++it){
+	for(std::vector<Word>::iterator it=a.begin(); it!=a.end(); ++it){
+		std::cout <<' '<< *it;
+	}
+	std::cout << '\n';
+	std::rotate(a.begin(), a.begin() + 1, a.end());
+	}
 
 }
 
-
-*/
