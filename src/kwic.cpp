@@ -32,24 +32,17 @@ std::set<std::vector<Word>> insertLine(std::istream& input) {
 }
 
 std::set<std::vector<Word>> rotateLine(std::set<std::vector<Word>> input) {
-	std::set<std::vector<Word>> resultWord { };
+	std::set<std::vector<Word>> resultWord {input};
 
 	for (auto currentLine : input) {
-		for (size_t index { 0 }; index < currentLine.size(); ++index) {
-			std::vector<Word> outputLine { };
-			std::rotate_copy(currentLine.begin(), currentLine.begin() + 1, currentLine.end(), std::back_inserter(outputLine));
-			resultWord.insert(outputLine);
+		std::vector<Word> rotated {currentLine};
+		for(auto word : rotated){
+			std::rotate(rotated.begin(), rotated.begin()+rotated.size()/2, rotated.end());
+			resultWord.insert(rotated);
 		}
+
 	}
-/*
-	for (std::vector<Word>::iterator it = a.begin(); it != a.end(); ++it) {
-		for (std::vector<Word>::iterator it = a.begin(); it != a.end(); ++it) {
-			std::cout << ' ' << *it;
-		}
-		std::cout << '\n';
-		std::rotate(a.begin(), a.begin() + 1, a.end());
-	}
-*/
+
 	return resultWord;
 }
 

@@ -10,14 +10,5 @@ int main(){
 
 
 
-
-	for(std::vector<Word>::iterator it=a.begin(); it!=a.end(); ++it){
-	for(std::vector<Word>::iterator it=a.begin(); it!=a.end(); ++it){
-		std::cout <<' '<< *it;
-	}
-	std::cout << '\n';
-	std::rotate(a.begin(), a.begin() + 1, a.end());
-	}
-
 }
 
