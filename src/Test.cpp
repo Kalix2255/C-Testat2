@@ -3,6 +3,7 @@
 #include "xml_listener.h"
 #include "cute_runner.h"
 #include "word.h"
+#include "kwic.h"
 
 void test_cannot_create_empty_word() {
 	ASSERT_THROWS(Word { "" }, std::invalid_argument);
@@ -175,6 +176,45 @@ void test_exercise_example() {
 	ASSERT_EQUAL(Word{"put"}, w);
 }
 
+void test_alphabetic_output_abc(){
+	std::istringstream input{"a b c"};
+	std::istringstream testInput{ "a b c\n c a b\n b c a\n" };
+	std::set<std::vector<Word>> rotated { rotateLine(	insertLine(input) ) };
+	std::set<std::vector<Word>> test { insertLine(testInput) };
+	ASSERT_EQUAL(test, rotated);
+}
+
+void test_alphabetic_output_xyz(){
+	std::istringstream input{"y z x"};
+	std::istringstream testInput{ "x y z\n z x y\n y z x\n" };
+	std::set<std::vector<Word>> rotated { rotateLine(	insertLine(input) ) };
+	std::set<std::vector<Word>> test { insertLine(testInput) };
+	ASSERT_EQUAL(test, rotated);
+}
+
+void test_alphabetic_output_abcde(){
+	std::istringstream input{"d e a b c"};
+	std::istringstream testInput{ "a b c d e\n e a b c d\n d e a b c\n c d e a b\n b c d e a" };
+	std::set<std::vector<Word>> rotated { rotateLine(	insertLine(input) ) };
+	std::set<std::vector<Word>> test { insertLine(testInput) };
+	ASSERT_EQUAL(test, rotated);
+}
+
+void test_count_new_lines(){
+	std::istringstream input{"a b c d e"};
+	std::set<std::vector<Word>> rotated { rotateLine(	insertLine(input) ) };
+	ASSERT_EQUAL(5, rotated.size());
+}
+
+void test_count_new_lines2(){
+	std::istringstream input{"hihi huhu haha"};
+	std::set<std::vector<Word>> rotated { rotateLine(	insertLine(input) ) };
+	ASSERT_EQUAL(3, rotated.size());
+}
+
+
+
+
 bool runAllTests(int argc, char const *argv[]) {
 	cute::suite s { };
 	s.push_back(CUTE(test_cannot_create_empty_word));
@@ -207,16 +247,20 @@ bool runAllTests(int argc, char const *argv[]) {
 	s.push_back(CUTE(test_input_operator_overwrites_word));
 	s.push_back(CUTE(test_input_operator_on_stream_without_word));
 	s.push_back(CUTE(test_exercise_example));
+	s.push_back(CUTE(test_alphabetic_output_abc));
+	s.push_back(CUTE(test_alphabetic_output_xyz));
+	s.push_back(CUTE(test_alphabetic_output_abcde));
+	s.push_back(CUTE(test_count_new_lines));
+	s.push_back(CUTE(test_count_new_lines2));
 	cute::xml_file_opener xmlfile(argc, argv);
 	cute::xml_listener<cute::ide_listener<>> lis(xmlfile.out);
 	auto runner { cute::makeRunner(lis, argc, argv) };
 	bool success = runner(s, "AllTests");
 	return success;
 }
-/*
+
 
 int main(int argc, char const *argv[]) {
 	return runAllTests(argc, argv) ? EXIT_SUCCESS : EXIT_FAILURE;
 }
 
-*/

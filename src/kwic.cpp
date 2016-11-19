@@ -52,7 +52,7 @@ void printLine(std::set<std::vector<Word>> resulti, std::ostream& outputStream) 
 		for(auto word : myLine){
 			outputStream << word << " ";
 		}
-		outputStream <<"\n";
+		outputStream << "\n";
 	}
 }
 

@@ -4,11 +4,12 @@
 #include <vector>
 #include <algorithm>
 #include <iterator>
-int main(){
-
+#include <ostream>
+/*
+ int main(){
 	kwic(std::cin, std::cout);
 
-
-
 }
+
+*/
 

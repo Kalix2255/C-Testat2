@@ -1,5 +1,5 @@
 <testsuites>
-	<testsuite name="AllTests" tests="30">
+	<testsuite name="AllTests" tests="35">
 		<testcase classname="AllTests" name="test_cannot_create_empty_word"/>
 		<testcase classname="AllTests" name="test_cannot_create_word_with_space"/>
 		<testcase classname="AllTests" name="test_cannot_create_word_with_number"/>
@@ -30,5 +30,10 @@
 		<testcase classname="AllTests" name="test_input_operator_overwrites_word"/>
 		<testcase classname="AllTests" name="test_input_operator_on_stream_without_word"/>
 		<testcase classname="AllTests" name="test_exercise_example"/>
+		<testcase classname="AllTests" name="test_alphabetic_output_abc"/>
+		<testcase classname="AllTests" name="test_alphabetic_output_xyz"/>
+		<testcase classname="AllTests" name="test_alphabetic_output_abcde"/>
+		<testcase classname="AllTests" name="test_count_new_lines"/>
+		<testcase classname="AllTests" name="test_count_new_lines2"/>
 	</testsuite>
 </testsuites>

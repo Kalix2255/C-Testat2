@@ -1,9 +1,3 @@
-/*
- * word.h
- *
- *  Created on: 26.10.2016
- *      Author: Enzo
- */
 #include <iosfwd>
 #include <istream>
 #include <ostream>
